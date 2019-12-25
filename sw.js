@@ -14,8 +14,8 @@ const assets = [
     '/logo.png',
     '/logo512.png',
     '/static/media/logo.5d5d9eef.svg',
-    'favicon.ico',
-    '/'
+    'favicon.ico'
+    // '/'
   ];
 
 self.addEventListener('install', event => {
