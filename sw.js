@@ -40,15 +40,14 @@ self.addEventListener('activate',function(event){
     );  
 })
 
-self.addEventListener('fetch',function(event){
-event.respondWith(
-    caches.match(event.request).then(function(response){
-         if(response)
-         return response;
-    })
-)
-})
-
+self.addEventListener('fetch', evt => {
+    console.log('fetch event', evt);
+    evt.respondWith(
+      caches.match(evt.request).then(cacheRes => {
+        return cacheRes || fetch(evt.request);
+      })
+    );
+  });
 // activate event
 // self.addEventListener('activate', evt => {
 //     console.log('service worker activated');
