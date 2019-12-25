@@ -27,6 +27,18 @@ self.addEventListener('install', event => {
         }).then(() => self.skipWaiting())
     )
 });
+self.addEventListener('activate',function(event){
+    console.log('service worker activated');
+    event.waitUntil(
+        caches.keys().then(keys => {
+            //console.log(keys);
+            return Promise.all(keys
+              .filter(key => key !== cacheName)
+              .map(key => caches.delete(key))
+            );
+          })
+    );  
+})
 
 self.addEventListener('fetch',function(event){
 event.respondWith(
