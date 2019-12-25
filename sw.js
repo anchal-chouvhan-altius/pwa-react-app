@@ -1,5 +1,5 @@
-const cacheName = 'todo-app';
-const assets = [
+var cacheName = 'todo-app';
+var assets = [
     '/static/js/bundle.js',
     '/static/js/bundle.js.map',
     '/static/js/main.chunk.js.map',
