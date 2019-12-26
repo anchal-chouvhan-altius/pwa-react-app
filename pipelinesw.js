@@ -1,6 +1,5 @@
 var cacheName = 'todo-app_v2';
 var assets = [
-    '/',
     '/static/js/bundle.js',
     '/static/js/bundle.js.map',
     '/static/js/main.chunk.js.map',
@@ -34,6 +33,8 @@ self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
       keys.map(key => {
+        console.log("key---"+key)
+        console.log("cacheName---"+cacheName)
         if (!cacheName.includes(key)) {
           return caches.delete(key);
         }
