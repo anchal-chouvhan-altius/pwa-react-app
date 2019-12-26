@@ -1,6 +1,7 @@
 var cacheName = 'todo-app_v2';
 var assets = [
-  '/index.html'
+  '/index.html',
+  '/static/js/bundle.js'
 ];
 
 self.addEventListener('install', event => {
