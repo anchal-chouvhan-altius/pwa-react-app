@@ -1,5 +1,4 @@
-var version = 'todo-app_v1';
-var cacheName = version;
+var cacheName = 'todo-app_v2';
 var assets = [
     '/',
     '/static/js/bundle.js',
