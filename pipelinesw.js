@@ -1,6 +1,7 @@
 var version = 'todo-app_v1';
 var cacheName = version;
 var assets = [
+    '/',
     '/static/js/bundle.js',
     '/static/js/bundle.js.map',
     '/static/js/main.chunk.js.map',
@@ -16,7 +17,6 @@ var assets = [
     '/logo512.png',
     '/static/media/logo.5d5d9eef.svg',
     'favicon.ico'
-    // '/'
 ];
 
 self.addEventListener('install', event => {
@@ -30,15 +30,19 @@ self.addEventListener('install', event => {
 });
 self.addEventListener('activate', function (event) {
     console.log('service worker activated');
-    event.waitUntil(
-        caches.keys().then(keys => {
-            //console.log(keys);
-            return Promise.all(keys
-                .filter(key => key !== cacheName)
-                .map(key => caches.delete(key))
-            );
-        })
-    );
+   // delete any caches that aren't in expectedCaches
+  // which will get rid of static-v1
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.map(key => {
+        if (!cacheName.includes(key)) {
+          return caches.delete(key);
+        }
+      })
+    )).then(() => {
+      console.log('V2 now ready to handle fetches!');
+    })
+  );
 })
 
 self.addEventListener('fetch', evt => {
