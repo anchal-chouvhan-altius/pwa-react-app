@@ -1,8 +1,8 @@
 var cacheName = 'todo-app_v2';
 var assets = [
-  '/logo.png',
   '/index.html',
-  '/manifest.json'
+  '/manifest.json',
+  'favicon.ico'
 ];
 
 self.addEventListener('install', event => {
