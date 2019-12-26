@@ -1,20 +1,6 @@
 var cacheName = 'todo-app_v2';
 var assets = [
-    '/static/js/bundle.js',
-    '/static/js/bundle.js.map',
-    '/static/js/main.chunk.js.map',
-    '/index.html',
-    '/static/js/0.chunk.js',
-    '/static/js/0.chunk.js.map',
-    '/static/js/1.chunk.js',
-    '/static/js/main.chunk.js',
-    '/sockjs-node',
-    '/manifest.json',
-    '/logo192.png',
-    '/logo.png',
-    '/logo512.png',
-    '/static/media/logo.5d5d9eef.svg',
-    'favicon.ico'
+  '/index.html'
 ];
 
 self.addEventListener('install', event => {
