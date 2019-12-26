@@ -5,8 +5,7 @@ var assets = [
   'favicon.ico',
   '/pwa-react-app/logo.png',
   '/pwa-react-app/logo192.png',
-  '/pwa-react-app/logo512.png',
-  '/pwa-react-app/static/media/logo.5d5d9eef.svg'
+  '/pwa-react-app/logo512.png'
   // '/static/css/main.2a3f1e63.chunk.css'
 ];
 
