@@ -24,7 +24,7 @@ self.addEventListener('install', event => {
         caches.open(cacheName).then((cahce) => {
             console.log("Going to add assessts")
             cahce.addAll(assets);
-        }).then(() => self.skipWaiting())
+        }).then(() => self.skipWaiting()).catch(function(err){console.log("Error occured while installing service worker---"+err)})
     )
 });
 self.addEventListener('activate', function (event) {
