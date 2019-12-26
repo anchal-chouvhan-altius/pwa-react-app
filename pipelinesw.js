@@ -55,7 +55,7 @@ self.addEventListener('fetch', evt => {
     evt.respondWith(
         caches.match(evt.request).then(cacheRes => {
             return cacheRes || fetch(evt.request);
-        })
+        }).catch(function(error) {console.log("Error occured while fetching ---"+error)})
     );
 });
 self.addEventListener('message', (event) => {
