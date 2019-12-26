@@ -1,8 +1,9 @@
-var cacheName = 'todo-app_v2';
+var cacheName = 'todo-app_v3';
 var assets = [
   '/index.html',
-  '/manifest.json'
-  // 'favicon.ico',
+  '/manifest.json',
+  'favicon.ico',
+  '/logo192.png'
   // '/static/css/main.2a3f1e63.chunk.css'
 ];
 
