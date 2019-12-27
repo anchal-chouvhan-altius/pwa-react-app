@@ -1,13 +1,29 @@
 var cacheName = 'todo-app_v5';
 var assets = [
-  '/index.html',
-  '/manifest.json',
-  'favicon.ico',
+  '/pwa-react-app/index.html',
+  '/pwa-react-app/manifest.json',
+  '/pwa-react-app/favicon.ico',
   '/pwa-react-app/logo.png',
   '/pwa-react-app/logo192.png',
   '/pwa-react-app/logo512.png'
   // '/static/css/main.2a3f1e63.chunk.css'
 ];
+
+// --    '/static/js/bundle.js',
+//   --  '/static/js/bundle.js.map',
+//    -- '/static/js/main.chunk.js.map',
+// ,
+//     --'/static/js/0.chunk.js',
+// --     '/static/js/0.chunk.js.map',
+//    -- '/static/js/1.chunk.js',
+// --    '/static/js/main.chunk.js',
+//   --  '/sockjs-node',
+//     '/manifest.json',
+//     '/logo192.png',
+//     '/logo.png',
+//     '/logo512.png',
+//     '/static/media/logo.5d5d9eef.svg',
+//     'favicon.ico'
 
 self.addEventListener('install', event => {
     console.log('service worker installed');
