@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v8';
+var cacheName = 'todo-app-v9';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
@@ -8,8 +8,7 @@ var assets = [
   '/pwa-react-app/logo512.png',
   '/pwa-react-app/static/js/main.7d4faf4a.chunk.js',
   '/pwa-react-app/static/css/main.2a3f1e63.chunk.css',
-  '/pwa-react-app/static/js/2.9eb1b836.chunk.js',
-  '/pwa-react-app/anchal.png'
+  '/pwa-react-app/static/js/2.9eb1b836.chunk.js'
 ];
 
 // --    '/static/js/bundle.js',
