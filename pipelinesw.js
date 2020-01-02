@@ -70,9 +70,9 @@ self.addEventListener('fetch', evt => {
         //   });
         // });
 
-        const cache = await caches.open(cacheName);
+        const cache = caches.open(cacheName);
         console.log("cache*******"+cache);
-        const cachedResponse = await cache.match('https://anchalchouvhan.github.io/pwa-react-app/anchal.png');
+        const cachedResponse = cache.match('https://anchalchouvhan.github.io/pwa-react-app/anchal.png');
         console.log("cachedResponse*******"+cachedResponse);
 
     evt.respondWith(
