@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v10';
+var cacheName = 'todo-app-v11';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
@@ -62,18 +62,15 @@ self.addEventListener('fetch', evt => {
     console.log("location.origin---"+location.origin);
     console.log("url.pathname---"+url.pathname);
 
-        // caches.open(cacheName)
-        // .then(function(cache) {
-        // cache.match('https://anchalchouvhan.github.io/pwa-react-app/anchal.png')
-        //   .then(function(response) {
-        //      console.log('my image found')
-        //   });
-        // });
-
-        const cache = caches.open(cacheName);
-        console.log("cache*******"+cache);
-        const cachedResponse = cache.match('https://anchalchouvhan.github.io/pwa-react-app/anchal.png');
-        console.log("cachedResponse*******"+cachedResponse);
+        caches.open(cacheName)
+        .then(function(cache) {
+          console.log("cache*******"+cache);
+        cache.matchAll('https://anchalchouvhan.github.io/pwa-react-app/anchal.png')
+          .then(function(response) {
+             console.log('my image found')
+             console.log("response*******"+response);
+          });
+        });
 
     evt.respondWith(
         caches.match(evt.request).then(cacheRes => {
