@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v7';
+var cacheName = 'todo-app-v8';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
@@ -63,8 +63,14 @@ self.addEventListener('fetch', evt => {
     console.log("location.origin---"+location.origin);
     console.log("url.pathname---"+url.pathname);
 
-    caches.match('https://anchalchouvhan.github.io/pwa-react-app/anchal.png').then(cacheRes => {
-        console.log("Image found")}).catch(function(error) {console.log("Error occured while fetching ---"+error)})
+        caches.open(cacheName)
+        .then(function(cache) {
+        cache.match('https://anchalchouvhan.github.io/pwa-react-app/anchal.png')
+          .then(function(response) {
+             console.log('my image found')
+          });
+        });
+
 
     evt.respondWith(
         caches.match(evt.request).then(cacheRes => {
