@@ -64,7 +64,6 @@ self.addEventListener('fetch', evt => {
 
     caches.open(cacheName).then(function(cache) {
       console.log("Cache exists");
-    });
   }).catch(function(error) {
     // ChromeSamples.setStatus(error);
     console.log("Cache does not exists");
