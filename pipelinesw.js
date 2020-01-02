@@ -63,7 +63,7 @@ self.addEventListener('fetch', evt => {
     console.log("location.origin---"+location.origin);
     console.log("url.pathname---"+url.pathname);
 
-    caches.match('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(cacheRes => {
+    caches.match('https://anchalchouvhan.github.io/pwa-react-app/logo5678.png').then(cacheRes => {
         console.log("Image found")}).catch(function(error) {console.log("Error occured while fetching ---"+error)})
 
     evt.respondWith(
