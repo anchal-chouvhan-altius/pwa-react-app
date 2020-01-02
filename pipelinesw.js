@@ -67,7 +67,7 @@ self.addEventListener('fetch', evt => {
   }).catch(function(error) {
     // ChromeSamples.setStatus(error);
     console.log("Cache does not exists");
-  });   
+  })  
 
         // cache.match("https://anchalchouvhan.github.io/pwa-react-app/logo.png")
         //   .then(function(response) {
