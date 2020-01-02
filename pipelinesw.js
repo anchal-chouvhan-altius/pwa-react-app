@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v13';
+var cacheName = 'todo-app-v14';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
@@ -64,8 +64,7 @@ self.addEventListener('fetch', evt => {
 
         caches.open(cacheName)
         .then(function(cache) {
-          console.log("cache*******"+cache);
-        cache.matchAll('https://anchalchouvhan.github.io/pwa-react-app/logo.png')
+        cache.matchAll("https://anchalchouvhan.github.io/pwa-react-app/logo.png")
           .then(function(response) {
              console.log('my image found')
              console.log("response*******"+response);
