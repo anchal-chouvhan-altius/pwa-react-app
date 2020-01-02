@@ -8,8 +8,8 @@ var assets = [
   '/pwa-react-app/logo512.png',
   '/pwa-react-app/static/js/main.7d4faf4a.chunk.js',
   '/pwa-react-app/static/css/main.2a3f1e63.chunk.css',
-  '/pwa-react-app/static/js/2.9eb1b836.chunk.js'
-  // '/static/css/main.2a3f1e63.chunk.css'
+  '/pwa-react-app/static/js/2.9eb1b836.chunk.js',
+  '/pwa-react-app/anchal.png'
 ];
 
 // --    '/static/js/bundle.js',
