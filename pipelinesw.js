@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v25';
+var cacheName = 'todo-app-v26';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
@@ -45,7 +45,24 @@ self.addEventListener('activate', function (event) {
     fetch('https://anchalchouvhan.github.io/pwa-react-app/anchallogo.png').then(function(response) {
       console.log("response---"+response.statusText);
       if (!response.ok) {
-        alert("cache has been cleared");
+        navigator.serviceWorker.getRegistration().then(function(reg) {
+          var options = {
+            body: 'Cache deleted',
+            icon: '/logo.png',
+            vibrate: [100, 50, 100],
+            data: {
+              dateOfArrival: Date.now(),
+              primaryKey: 1
+            },
+            actions: [
+              {action: 'explore', title: 'Visit altius',
+                icon: '/logo.png'},
+              {action: 'close', title: 'Close notification',
+                icon: '/logo.png'},
+            ]
+          };
+          reg.showNotification('Hello world!', options);
+        }); 
         cahce.addAll(assets);
       }
     }).catch(function(error) {
