@@ -45,7 +45,9 @@ self.addEventListener('activate', function (event) {
     fetch('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
       console.log("response---"+response);
       console.log("response json---"+response.json());
-    })
+    }).catch(function(error) {
+      console.log('Looks like there was a problem: \n', error);
+    });
   })
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
