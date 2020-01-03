@@ -40,6 +40,13 @@ self.addEventListener('activate', function (event) {
     console.log('service worker activated');
    // delete any caches that aren't in expectedCaches
   // which will get rid of static-v1
+  caches.open(cacheName).then(function(cache) {
+    console.log("going to call fetch ---")
+    fetch('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
+      console.log("response---"+response);
+      console.log("response json---"+response.json());
+    })
+  })
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
       keys.map(key => {
@@ -62,16 +69,7 @@ self.addEventListener('fetch', evt => {
     console.log("location.origin---"+location.origin);
     console.log("url.pathname---"+url.pathname);
 
-// cache.match("https://anchalchouvhan.github.io/pwa-react-app/logo.png")
-
-caches.open(cacheName).then(function(cache) {
-  console.log("going to call fetch ---")
-  fetch('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
-    console.log("response---"+response);
-    console.log("response json---"+response.json());
-  })
-})
-        
+// cache.match("https://anchalchouvhan.github.io/pwa-react-app/logo.png")        
        
     evt.respondWith(
         caches.match(evt.request).then(cacheRes => {
