@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v18';
+var cacheName = 'todo-app-v19';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
@@ -43,8 +43,10 @@ self.addEventListener('activate', function (event) {
   caches.open(cacheName).then(function(cache) {
     console.log("going to call fetch ---")
     fetch('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
-      console.log("response---"+response);
-      console.log("response json---"+response.json());
+      console.log("response---"+response.statusText);
+      if (!response.ok) {
+        console.log("Error occured")
+      }
     }).catch(function(error) {
       console.log('Looks like there was a problem: \n', error);
     });
