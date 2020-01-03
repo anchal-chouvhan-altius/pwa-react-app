@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v28';
+var cacheName = 'todo-app-v29';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
@@ -45,24 +45,7 @@ self.addEventListener('activate', function (event) {
     fetch('https://anchalchouvhan.github.io/pwa-react-app/anchallogo.png').then(function(response) {
       console.log("response---"+response.statusText);
       if (!response.ok) {
-        navigator.serviceWorker.getRegistration().then(function(reg) {
-          var options = {
-            body: 'Cache deleted',
-            icon: '/logo.png',
-            vibrate: [100, 50, 100],
-            data: {
-              dateOfArrival: Date.now(),
-              primaryKey: 1
-            },
-            actions: [
-              {action: 'explore', title: 'Visit altius',
-                icon: '/logo.png'},
-              {action: 'close', title: 'Close notification',
-                icon: '/logo.png'},
-            ]
-          };
-          reg.showNotification('Hello world!', options);
-        }); 
+        showNotification();
         cahce.addAll(assets);
       }
     }).catch(function(error) {
@@ -181,3 +164,18 @@ self.addEventListener('push', function(e) {
     self.registration.showNotification('Hello world!', options)
   );
 });
+
+function showNotification() {
+  Notification.requestPermission(function(result) {
+    if (result === 'granted') {
+      navigator.serviceWorker.ready.then(function(registration) {
+        registration.showNotification('Vibration Sample', {
+          body: 'Buzz! Buzz!',
+          icon: '../images/touch/chrome-touch-icon-192x192.png',
+          vibrate: [200, 100, 200, 100, 200, 100, 200],
+          tag: 'vibration-sample'
+        });
+      });
+    }
+  });
+}
