@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v20';
+var cacheName = 'todo-app-v21';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
@@ -42,7 +42,7 @@ self.addEventListener('activate', function (event) {
   // which will get rid of static-v1
   caches.open(cacheName).then(function(cache) {
     console.log("going to call fetch ---")
-    fetch('pwa-react-app/logo.png').then(function(response) {
+    fetch('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
       console.log("response---"+response.statusText);
       if (!response.ok) {
         console.log("Error occured")
