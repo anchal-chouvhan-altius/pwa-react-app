@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v29';
+var cacheName = 'todo-app-v30';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
@@ -166,16 +166,25 @@ self.addEventListener('push', function(e) {
 });
 
 function showNotification() {
-  Notification.requestPermission(function(result) {
-    if (result === 'granted') {
-      navigator.serviceWorker.ready.then(function(registration) {
-        registration.showNotification('Vibration Sample', {
-          body: 'Buzz! Buzz!',
-          icon: '../images/touch/chrome-touch-icon-192x192.png',
-          vibrate: [200, 100, 200, 100, 200, 100, 200],
-          tag: 'vibration-sample'
-        });
-      });
+  // Notification.requestPermission(function(result) {
+  //   if (result === 'granted') {
+  //     navigator.serviceWorker.ready.then(function(registration) {
+  //       registration.showNotification('Vibration Sample', {
+  //         body: 'Buzz! Buzz!',
+  //         icon: '../images/touch/chrome-touch-icon-192x192.png',
+  //         vibrate: [200, 100, 200, 100, 200, 100, 200],
+  //         tag: 'vibration-sample'
+  //       });
+  //     });
+  //   }
+  // });
+  Notification.requestPermission().then(function (permission) {
+    // If the user accepts, let's create a notification
+    console.log("permissions---"+permission);
+    if (permission === "granted") {
+      var notification = new Notification("Hi there!");
     }
+  }).catch(function(error){
+    console.log("error occured while fetching permissions");
   });
 }
