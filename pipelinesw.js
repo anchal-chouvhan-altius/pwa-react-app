@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v31';
+var cacheName = 'todo-app-v32';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
@@ -178,7 +178,7 @@ function showNotification() {
   //     });
   //   }
   // });
-  window.Notification.requestPermission().then(function (permission) {
+  Notification.requestPermission().then(function (permission) {
     // If the user accepts, let's create a notification
     console.log("permissions---"+permission);
     if (permission === "granted") {
