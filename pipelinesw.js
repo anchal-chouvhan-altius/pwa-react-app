@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v23';
+var cacheName = 'todo-app-v24';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
@@ -45,7 +45,8 @@ self.addEventListener('activate', function (event) {
     fetch('https://anchalchouvhan.github.io/pwa-react-app/anchallogo.png').then(function(response) {
       console.log("response---"+response.statusText);
       if (!response.ok) {
-        console.log("Error occured")
+        alert("cache has been cleared");
+        cahce.addAll(assets);
       }
     }).catch(function(error) {
       console.log('Looks like there was a problem: \n', error);
