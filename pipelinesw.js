@@ -62,32 +62,16 @@ self.addEventListener('fetch', evt => {
     console.log("location.origin---"+location.origin);
     console.log("url.pathname---"+url.pathname);
 
-  //   caches.open(cacheName).then(function(cache) {
-  //     console.log("Cache exists");
-  // }).catch(function(error) {
-  //   // ChromeSamples.setStatus(error);
-  //   console.log("Cache does not exists");
-  // })  
+// cache.match("https://anchalchouvhan.github.io/pwa-react-app/logo.png")
 
-        // cache.match("https://anchalchouvhan.github.io/pwa-react-app/logo.png")
-        //   .then(function(response) {
-        //      console.log('my image found')
-        //      console.log("response*******"+response);
-        //   }).catch(function(error){
-        //     console.log("error occured-------"+error);
-        //   });
-
-        caches.keys().then(keys => Promise.all(
-          keys.map(key => {
-            console.log("key---"+key)
-            console.log("cacheName---"+cacheName)
-            if (!cacheName.includes(key)) {
-              return caches.delete(key);
-            }
-          })
-        )).then(() => {
-          console.log('V2 now ready to handle fetches!');
-        })
+caches.open(cacheName).then(function(cache) {
+  console.log("going to call fetch ---")
+  fetch('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
+    console.log("response---"+response);
+    console.log("response json---"+response.json());
+  })
+})
+        
        
     evt.respondWith(
         caches.match(evt.request).then(cacheRes => {
