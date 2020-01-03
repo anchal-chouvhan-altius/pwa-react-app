@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v27';
+var cacheName = 'todo-app-v28';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
@@ -141,3 +141,43 @@ self.addEventListener('message', (event) => {
 // 		clients.openWindow('https://aws-amplify.github.io/amplify-js')
 // 	);
 // });
+self.addEventListener('notificationclose', function(e) {
+  var notification = e.notification;
+  var primaryKey = notification.data.primaryKey;
+
+  console.log('Closed notification: ' + primaryKey);
+});
+
+self.addEventListener('notificationclick', function(e) {
+  var notification = e.notification;
+  var primaryKey = notification.data.primaryKey;
+  var action = e.action;
+
+  if (action === 'close') {
+    notification.close();
+  } else {
+    clients.openWindow('https://www.altius.cc/');
+    notification.close();
+  }
+});
+// Push messaging
+self.addEventListener('push', function(e) {
+  var options = {
+    body: 'This notification was generated from a push!',
+    icon: '/logo.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: '2'
+    },
+    actions: [
+      {action: 'explore', title: 'Explore this new world',
+        icon: '/logo.png'},
+      {action: 'close', title: 'Close',
+        icon: '/logo.png'},
+    ]
+  };
+  e.waitUntil(
+    self.registration.showNotification('Hello world!', options)
+  );
+});
