@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v35';
+var cacheName = 'todo-app-v36';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
