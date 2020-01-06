@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v34';
+var cacheName = 'todo-app-v35';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
@@ -53,7 +53,13 @@ self.addEventListener('activate', function (event) {
   //   });
   // })
 
-  cahce.addAll(assets);
+  caches.open(cacheName).then((cahce) => {
+    console.log("Going to add assessts")
+    cahce.addAll(assets);
+}).then(() => self.skipWaiting()).catch(function(err){console.log("Error occured while installing service worker---"+err)})
+
+
+
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
       keys.map(key => {
