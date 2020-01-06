@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v32';
+var cacheName = 'todo-app-v33';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
@@ -45,7 +45,7 @@ self.addEventListener('activate', function (event) {
     fetch('https://anchalchouvhan.github.io/pwa-react-app/anchallogo.png').then(function(response) {
       console.log("response---"+response.statusText);
       if (!response.ok) {
-        showNotification();
+        // showNotification();
         cahce.addAll(assets);
       }
     }).catch(function(error) {
