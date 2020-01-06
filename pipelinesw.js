@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v33';
+var cacheName = 'todo-app-v34';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
@@ -40,18 +40,20 @@ self.addEventListener('activate', function (event) {
     console.log('service worker activated');
    // delete any caches that aren't in expectedCaches
   // which will get rid of static-v1
-  caches.open(cacheName).then(function(cache) {
-    console.log("going to call fetch ---")
-    fetch('https://anchalchouvhan.github.io/pwa-react-app/anchallogo.png').then(function(response) {
-      console.log("response---"+response.statusText);
-      if (!response.ok) {
-        // showNotification();
-        cahce.addAll(assets);
-      }
-    }).catch(function(error) {
-      console.log('Looks like there was a problem: \n', error);
-    });
-  })
+  // caches.open(cacheName).then(function(cache) {
+  //   console.log("going to call fetch ---")
+  //   fetch('https://anchalchouvhan.github.io/pwa-react-app/anchallogo.png').then(function(response) {
+  //     console.log("response---"+response.statusText);
+  //     if (!response.ok) {
+  //       // showNotification();
+  //       cahce.addAll(assets);
+  //     }
+  //   }).catch(function(error) {
+  //     console.log('Looks like there was a problem: \n', error);
+  //   });
+  // })
+
+  cahce.addAll(assets);
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
       keys.map(key => {
