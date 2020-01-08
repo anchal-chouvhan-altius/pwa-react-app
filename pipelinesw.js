@@ -1,6 +1,8 @@
-var cacheName = 'todo-app-v36';
+var cacheName = 'todo-app-v52';
 var assets = [
   '/pwa-react-app/logo.png',
+  '/pwa-react-app/dog.jpg',
+  '/pwa-react-app/download.jpeg',
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
   '/pwa-react-app/favicon.ico',
@@ -31,7 +33,7 @@ self.addEventListener('install', event => {
     console.log('service worker installed');
     event.waitUntil(
         caches.open(cacheName).then((cahce) => {
-            console.log("Going to add assessts")
+            console.log("Going to add assessts...")
             cahce.addAll(assets);
         }).then(() => self.skipWaiting()).catch(function(err){console.log("Error occured while installing service worker---"+err)})
     )
@@ -53,24 +55,31 @@ self.addEventListener('activate', function (event) {
   //   });
   // })
 
-  caches.open(cacheName).then((cahce) => {
-    console.log("Going to add assessts")
-    cahce.addAll(assets);
-}).then(() => self.skipWaiting()).catch(function(err){console.log("Error occured while installing service worker---"+err)})
-
+//   caches.open(cacheName).then((cahce) => {
+//     console.log("Going to add assessts")
+//     cahce.addAll(assets);
+// }).then(() => self.skipWaiting()).catch(function(err){console.log("Error occured while installing service worker---"+err)})
+caches.match('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
+console.log("installation data---"+response);  
+if (!response) {
+  console.log("bad response");
+  }
+}).catch(function(error){
+  console.log("error occured----------------------"+error);
+})
 
 
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
       keys.map(key => {
         console.log("key---"+key)
-        console.log("cacheName---"+cacheName)
+        console.log("cacheName------"+cacheName)
         if (!cacheName.includes(key)) {
           return caches.delete(key);
         }
       })
     )).then(() => {
-      console.log('V2 now ready to handle fetches!');
+      console.log('V2 now ready to handle fetches!!!');
     })
   );
 })
