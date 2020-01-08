@@ -65,7 +65,7 @@ if (!response) {
   console.log("bad response");
   }
 }).catch(function(error){
-  console.log("error occured*************"+error);
+  console.log("error occured****************"+error);
 })
 
 
@@ -73,7 +73,7 @@ if (!response) {
     caches.keys().then(keys => Promise.all(
       keys.map(key => {
         console.log("key---"+key)
-        console.log("cacheName------*"+cacheName)
+        console.log("cacheName------****"+cacheName)
         if (!cacheName.includes(key)) {
           return caches.delete(key);
         }
