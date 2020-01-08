@@ -65,7 +65,7 @@ if (!response) {
   console.log("bad response");
   }
 }).catch(function(error){
-  console.log("error occured***"+error);
+  console.log("error occured*******"+error);
 })
 
 
