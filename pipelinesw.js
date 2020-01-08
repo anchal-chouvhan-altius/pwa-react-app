@@ -1,4 +1,5 @@
 var cacheName = 'todo-app-v52';
+var version ='1.001';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/dog.jpg',
@@ -59,14 +60,14 @@ self.addEventListener('activate', function (event) {
 //     console.log("Going to add assessts")
 //     cahce.addAll(assets);
 // }).then(() => self.skipWaiting()).catch(function(err){console.log("Error occured while installing service worker---"+err)})
-caches.match('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
-console.log("installation data---"+response);  
-if (!response) {
-  console.log("bad response");
-  }
-}).catch(function(error){
-  console.log("error occured****************"+error);
-})
+// caches.match('https://anchalchouvhan.github.io/pwa-react-app/logo.png').then(function(response) {
+// console.log("installation data---"+response);  
+// if (!response) {
+//   console.log("bad response");
+//   }
+// }).catch(function(error){
+//   console.log("error occured****************"+error);
+// })
 
 
   event.waitUntil(
