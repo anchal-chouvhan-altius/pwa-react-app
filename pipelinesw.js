@@ -1,5 +1,4 @@
 var cacheName = 'todo-app-v56';
-var version ='1.010';
 var assets = [
   '/pwa-react-app/index.html'
 ];
