@@ -1,7 +1,8 @@
-var cacheName = 'todo-app-v58';
+var cacheName = 'todo-app-v59';
 var assets = [
   '/pwa-react-app/index.html',
-  '/pwa-react-app/manifest.json'
+  '/pwa-react-app/manifest.json',
+  '/pwa-react-app/favicon.ico'
 ];
 
 // '/pwa-react-app/index.html',
