@@ -1,4 +1,4 @@
-var cacheName = 'todo-app-v10';
+var cacheName = 'todo-app-v12';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
