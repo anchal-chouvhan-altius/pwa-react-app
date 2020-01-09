@@ -1,9 +1,7 @@
-var cacheName = 'todo-app-v52';
+var cacheName = 'todo-app-v53';
 var version ='1.009';
 var assets = [
   '/pwa-react-app/logo.png',
-  '/pwa-react-app/dog.jpg',
-  '/pwa-react-app/download.jpeg',
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
   '/pwa-react-app/favicon.ico',
