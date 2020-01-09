@@ -1,10 +1,10 @@
-var cacheName = 'todo-app-v53';
-var version ='1.009';
+var cacheName = 'todo-app-v55';
+var version ='1.010';
 var assets = [
-  '/pwa-react-app/logo.png',
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
   '/pwa-react-app/favicon.ico',
+  '/pwa-react-app/logo.png',
   '/pwa-react-app/logo192.png',
   '/pwa-react-app/logo512.png',
   '/pwa-react-app/static/js/main.7d4faf4a.chunk.js',
