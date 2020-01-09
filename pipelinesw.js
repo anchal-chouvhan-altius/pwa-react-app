@@ -1,5 +1,5 @@
 var cacheName = 'todo-app-v52';
-var version ='1.003';
+var version ='1.004';
 var assets = [
   '/pwa-react-app/logo.png',
   '/pwa-react-app/dog.jpg',
