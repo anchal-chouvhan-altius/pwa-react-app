@@ -1,11 +1,12 @@
-var cacheName = 'todo-app-v5';
+var cacheName = 'todo-app-v6';
 var assets = [
   '/pwa-react-app/index.html',
   '/pwa-react-app/manifest.json',
   '/pwa-react-app/favicon.ico',
   '/pwa-react-app/logo.png',
   '/pwa-react-app/logo192.png',
-  '/pwa-react-app/logo512.png'
+  '/pwa-react-app/logo512.png',
+  '/pwa-react-app/static/js/main.7d4faf4a.chunk.js'
 ];
 
 // '/pwa-react-app/index.html',
