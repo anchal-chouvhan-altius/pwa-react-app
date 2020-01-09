@@ -1,16 +1,18 @@
-var cacheName = 'todo-app-v55';
+var cacheName = 'todo-app-v56';
 var version ='1.010';
 var assets = [
-  '/pwa-react-app/index.html',
-  '/pwa-react-app/manifest.json',
-  '/pwa-react-app/favicon.ico',
-  '/pwa-react-app/logo.png',
-  '/pwa-react-app/logo192.png',
-  '/pwa-react-app/logo512.png',
-  '/pwa-react-app/static/js/main.7d4faf4a.chunk.js',
-  '/pwa-react-app/static/css/main.2a3f1e63.chunk.css',
-  '/pwa-react-app/static/js/2.9eb1b836.chunk.js'
+  '/pwa-react-app/index.html'
 ];
+
+// '/pwa-react-app/index.html',
+//   '/pwa-react-app/manifest.json',
+//   '/pwa-react-app/favicon.ico',
+//   '/pwa-react-app/logo.png',
+//   '/pwa-react-app/logo192.png',
+//   '/pwa-react-app/logo512.png',
+//   '/pwa-react-app/static/js/main.7d4faf4a.chunk.js',
+//   '/pwa-react-app/static/css/main.2a3f1e63.chunk.css',
+//   '/pwa-react-app/static/js/2.9eb1b836.chunk.js'
 
 // --    '/static/js/bundle.js',
 //   --  '/static/js/bundle.js.map',
